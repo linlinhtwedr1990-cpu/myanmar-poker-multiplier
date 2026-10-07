@@ -1,31 +1,28 @@
-# Myanmar Poker Multiplier — V10.3 Web / Share-Link Edition
+# Myanmar Poker Multiplier — V10.2 Real-Player Multiplayer
 
-## What this version adds
-- Public-web deployment ready
-- One-click **Copy Invite Link**
-- Invite URL contains the room code (`?room=MP-ABCDE`)
-- Opening an invite link automatically prepares the Join Room flow
-- Real-player rooms: 3–5 players
-- No AI players
-- No Firebase billing required
-- Peer-to-peer multiplayer uses PeerJS
+## What this version does
+- Create a room and share the room code.
+- 3–5 real human players can join from separate devices/browsers.
+- Uses PeerJS/WebRTC for peer connections; no Firebase billing is required.
+- Host is authoritative for the actual V10 game engine.
+- Each player receives only their own hand; other hands are never sent to that player.
+- Synchronized actions: Upper decision, Center draw, offer, accept/reject, discard, and PLAY/WIN.
+- Existing V10 card arrangement controls remain: Number, Color + Number, Suit + Number, manual drag, grouping.
+- Owner Lin remains a non-playing creator mascot.
 
-## Quick test on one computer
-Use a local HTTP server (not `file://`). From this folder:
+## Important
+This is a browser prototype. It needs to be served from a web server (HTTPS is recommended) for real players to use it reliably. Opening files directly with `file://` is not the intended deployment method.
 
-```bash
-python3 -m http.server 8080
-```
+## Start locally
+Use a simple static server in this folder, for example:
 
-Then open `http://localhost:8080/` in a browser.
+`python3 -m http.server 8000`
 
-## Put it on the internet
-The folder is a static website and can be deployed to a static HTTPS host such as GitHub Pages, Netlify, or Cloudflare Pages. Upload the contents of this folder as the site files.
+Then open `http://localhost:8000/v102.html` on the host. For players on different devices, deploy the folder to a public HTTPS static host.
 
-After deployment, send players the site URL. The host creates a room and uses **Copy Invite Link**. Players can open that link directly on their phones.
-
-### Important
-- Use an **HTTPS** public URL for the deployed site.
-- Do not open the HTML by double-clicking the file for multiplayer testing.
-- PeerJS provides the signaling/broker connection; the game itself does not require Firebase Cloud Functions.
-- This is still a prototype multiplayer architecture. Before public release, add authentication, authoritative server validation, reconnect handling, anti-cheat controls, and production-grade signaling/server infrastructure.
+## Room flow
+1. Host opens V10.2 and clicks Create Room.
+2. Host sends the room code to 2–4 other real players.
+3. Players open the same public V10.2 web address and click Join Room.
+4. Host starts once 3–5 players are connected.
+5. Host runs the authoritative game; every device receives its own private hand plus public state.
