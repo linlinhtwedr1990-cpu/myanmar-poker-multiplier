@@ -1,0 +1,18 @@
+{
+  "version": "9.5-free",
+  "name": "Myanmar Poker Multiplier \u2014 V8.9 Free Mode",
+  "mode": "local-only",
+  "firebaseRequired": false,
+  "billingRequired": false,
+  "features": [
+    "local multiplayer",
+    "manual arrangement",
+    "local profile",
+    "local leaderboard",
+    "round history",
+    "offline storage",
+    "combination finder",
+    "selected-card combination detection",
+    "Senior/House/sequence highlighting"
+  ]
+}
