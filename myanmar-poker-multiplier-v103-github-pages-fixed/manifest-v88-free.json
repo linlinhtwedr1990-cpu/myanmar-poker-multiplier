@@ -1,0 +1,9 @@
+{
+  "version":"8.8-free",
+  "name":"Myanmar Poker Multiplier — Free Mode",
+  "mode":"local-hot-seat",
+  "firebase":false,
+  "billing":false,
+  "network":false,
+  "features":["13-card arrangement assistant","exact-cover suggestions","local profile","leaderboard","round history"]
+}

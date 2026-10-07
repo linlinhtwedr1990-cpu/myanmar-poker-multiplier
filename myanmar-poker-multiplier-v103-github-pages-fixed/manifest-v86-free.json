@@ -1,0 +1,13 @@
+{
+  "version": "V8.6-FREE",
+  "title": "Myanmar Poker Multiplier",
+  "mode": "local-hot-seat",
+  "firebaseRequired": false,
+  "billingRequired": false,
+  "players": "3-5",
+  "deck": "108 cards",
+  "notes": [
+    "Firebase architecture preserved separately",
+    "Local mode is for free development and playtesting"
+  ]
+}
